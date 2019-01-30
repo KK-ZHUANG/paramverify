@@ -4,7 +4,7 @@
  *
  * Array verify tool
  *
- * version 1.0.0
+ * version 1.0.1
  *
  * Author : KK (kkandmore@163.com)
  *
@@ -29,10 +29,7 @@ class Paramverify
       {
         if($v['required'] && !isset($param_ele[$index_v]))
         {
-          $return  = [
-            'status' => false,
-            'msg' => '['.$k.'] error code [1]'
-          ];
+          $return  = ['status' => false, 'msg' => '['.$k.'] error code [1]'];
           return $return;
         }
         else
@@ -46,29 +43,17 @@ class Paramverify
         $fun_call_name = 'is_'.$v['type'];
         if(!$fun_call_name($param_ele))
         {
-          $return  = [
-            'status' => false,
-            'msg' => '['.$k.'] error code [2]'
-          ];
+          $return  = ['status' => false, 'msg' => '['.$k.'] error code [2]'];
           return $return;
         }
         
         if(!preg_match($v['re'], $param_ele))
         {
           if(isset($v['msg']))
-          {
-            $return  = [
-              'status' => false,
-              'msg' => $v['msg']
-            ];
-          }
+            $return  = ['status' => false, 'msg' => $v['msg']];
           else
-          {
-            $return  = [
-              'status' => false,
-              'msg' => '['.$k.'] error code [3]'
-            ];
-          }
+            $return  = ['status' => false,'msg' => '['.$k.'] error code [3]'];
+          
           return $return;
         }
       }
