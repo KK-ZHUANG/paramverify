@@ -1,0 +1,17 @@
+{
+    "name": "kk/paramverify",
+    "description": "Parameter verify tool",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "KK",
+            "email": "kkandmore@163.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Parameter\\": "src"
+      }
+    },
+    "require": {}
+}
